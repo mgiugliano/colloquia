@@ -9,6 +9,6 @@ GitHub Repository for the Course.
 - Start:            Tue 1 October 2025
 - End:              Tue 17 December 2025
 - Class schedule:   see the website
-- Venue:            Mirandola – Modena (Italy)
+- Venue:            Polo culturale "Il Pico", Piazza Garibaldi 15, Mirandola – Modena (Italy)
 
 
