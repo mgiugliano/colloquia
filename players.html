@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Med Tech & Biomedical Key Players</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --card-bg: #ffffff;
+            --border-color: #dee2e6;
+            --primary-color: #0d6efd;
+            --primary-hover: #0b5ed7;
+            --muted-text: #6c757d;
+            --accent-bg: #e9ecef;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --primary-color: #512da8;
+            --primary-hover: #673ab7;
+            --muted-text: #a0a0a0;
+            --accent-bg: #2d2d2d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .controls {
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .intro-p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+
+        .company-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .location {
+            color: var(--muted-text);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .website-link {
+            display: inline-block;
+            margin-left: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .website-link:hover {
+            text-decoration: underline;
+        }
+
+        .description {
+            margin-top: 0.5rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <strong data-en="MedTech Directory" data-it="Directory MedTech">MedTech Directory</strong>
+        </div>
+        <div class="controls">
+            <button id="langToggle" onclick="toggleLanguage()">IT</button>
+            <button id="themeToggle" onclick="toggleTheme()" data-en="Dark Theme" data-it="Tema Scuro">Dark Theme</button>
+        </div>
+    </header>
+
+    <main>
+        <h1 data-en="Non-Exhaustive List of Key Players in the MedTech and Biomedical Sector" data-it="Lista NON esaustiva di key players nel settore Med Tech e Biomedicale">Non-Exhaustive List of Key Players in the MedTech and Biomedical Sector</h1>
+        
+        <p class="intro-p" 
+           data-en="Two primary directions appear to be undergoing rapid development. The first is the definitive shift away from 'open-loop' implant architectures toward intelligent (brain-responsive) systems capable of autonomously modulating based on the patient's physiological markers. The second direction is the evolution of materials (graphene, elastomers embedded with nanoparticles, optics) to significantly bypass foreign body immune responses, reducing tissue impedance and ensuring multi-decade chronic stability. The intersection of these directions will transform bioelectronic prototypes from costly research tools into a vast, new standard of clinical care for medical conditions currently lacking effective therapy." 
+           data-it="Due direttrici primarie sembrano essere in fase di sviluppo rapido. La prima è l'allontanamento definitivo dalle architetture implantari 'open-loop' verso sistemi intelligenti (brain-responsive) in grado di modularsi autonomamente sui marker fisiologici del paziente. La seconda direttrice è l'evoluzione dei materiali (grafene, elastomeri con nanoparticelle impiantate, ottica) per aggirare in maniera determinante le reazioni immunitarie da corpo estraneo, riducendo l'impedenza tissutale e garantendo stabilità cronica pluridecennale. L'intersecarsi di queste direttrici trasformerà i prototipi bioelettronici da costosi strumenti di ricerca in un nuovo, vasto standard di cura clinico per patologie mediche attualmente senza una terapia efficace.">
+           Two primary directions appear to be undergoing rapid development. The first is the definitive shift away from 'open-loop' implant architectures toward intelligent (brain-responsive) systems capable of autonomously modulating based on the patient's physiological markers. The second direction is the evolution of materials (graphene, elastomers embedded with nanoparticles, optics) to significantly bypass foreign body immune responses, reducing tissue impedance and ensuring multi-decade chronic stability. The intersection of these directions will transform bioelectronic prototypes from costly research tools into a vast, new standard of clinical care for medical conditions currently lacking effective therapy.
+        </p>
+
+        <h2 data-en="Brain-Computer Interfaces (BCI) and Cortical Arrays" data-it="Interfacce Cervello-Computer (BCI) e Matrici Corticali">Brain-Computer Interfaces (BCI) and Cortical Arrays</h2>
+        <ul>
+            <li>
+                <span class="company-name">CORTICALE</span> 
+                <span class="location">(Genova, Italy)</span> - 
+                <a href="https://www.corticale.com/" class="website-link" target="_blank">corticale.com</a>
+                <span class="description" 
+                      data-en="Develops high-density silicon microelectrode arrays for next-generation neural interfaces." 
+                      data-it="Sviluppa matrici di microelettrodi in silicio ad altissima densità per interfacce neurali di nuova generazione.">
+                      Develops high-density silicon microelectrode arrays for next-generation neural interfaces.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Blackrock Neurotech</span> 
+                <span class="location">(Salt Lake City, Utah, USA)</span> - 
+                <a href="https://blackrockneurotech.com/" class="website-link" target="_blank">blackrockneurotech.com</a>
+                <span class="description" 
+                      data-en="Provides brain-computer interfaces and standard microelectrode arrays for clinical and academic research." 
+                      data-it="Fornisce interfacce cervello-macchina e matrici di microelettrodi standard per la ricerca clinica e accademica.">
+                      Provides brain-computer interfaces and standard microelectrode arrays for clinical and academic research.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Motif Neurotech</span> 
+                <span class="location">(Houston, Texas, USA)</span> - 
+                <a href="https://motifneurotech.com/" class="website-link" target="_blank">motifneurotech.com</a>
+                <span class="description" 
+                      data-en="Develops wireless, miniaturized neural interfaces placed over the dura mater without penetrating brain tissue, designed to focally modulate neural circuits for treating treatment-resistant depression." 
+                      data-it="Sviluppa interfacce neurali miniaturizzate e wireless, posizionate sopra la dura madre e senza penetrare il tessuto cerebrale, per modulare in modo focale i circuiti neurali per il trattamento della depressione farmaco-resistente.">
+                      Develops wireless, miniaturized neural interfaces placed over the dura mater without penetrating brain tissue, designed to focally modulate neural circuits for treating treatment-resistant depression.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Precision Neuroscience</span> 
+                <span class="location">(New York, NY, USA)</span> - 
+                <a href="https://precisionneuro.io/" class="website-link" target="_blank">precisionneuro.io</a>
+                <span class="description" 
+                      data-en="Produces high-density, flexible cortical arrays designed for minimally invasive implantation." 
+                      data-it="Produce interfacce corticali ad alta densità, flessibili e progettate per un impianto minimamente invasivo.">
+                      Produces high-density, flexible cortical arrays designed for minimally invasive implantation.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Paradromics</span> 
+                <span class="location">(Austin, Texas, USA)</span> - 
+                <a href="https://www.paradromics.com/" class="website-link" target="_blank">paradromics.com</a>
+                <span class="description" 
+                      data-en="Creates high-data-rate brain-computer interfaces to restore communication for patients with severe motor disabilities." 
+                      data-it="Realizza interfacce cervello-computer ad alta velocità per il ripristino della comunicazione in pazienti con gravi disabilità motorie.">
+                      Creates high-data-rate brain-computer interfaces to restore communication for patients with severe motor disabilities.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Neuralink</span> 
+                <span class="location">(Fremont, California, USA)</span> - 
+                <a href="https://neuralink.com/" class="website-link" target="_blank">neuralink.com</a>
+                <span class="description" 
+                      data-en="Develops fully implantable, high-bandwidth BCI systems alongside robotic systems for neurotechnological surgery." 
+                      data-it="Sviluppa sistemi BCI completamente impiantabili ad alta larghezza di banda, oltre a sistemi robotici per la chirurgia neurotecnologica.">
+                      Develops fully implantable, high-bandwidth BCI systems alongside robotic systems for neurotechnological surgery.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Neuromodulation and Brain Pacemakers (DBS)" data-it="Neuromodulazione e Pacemaker Cerebrali (DBS)">Neuromodulation and Brain Pacemakers (DBS)</h2>
+        <ul>
+            <li>
+                <span class="company-name">Medtronic</span> 
+                <span class="location">(Minneapolis, Minnesota, USA)</span> - 
+                <a href="https://www.medtronic.com/" class="website-link" target="_blank">medtronic.com</a>
+                <span class="description" 
+                      data-en="Global leader in manufacturing Deep Brain Stimulation (DBS) systems and implantable medical devices." 
+                      data-it="Azienda leader mondiale nella produzione di sistemi per la Stimolazione Cerebrale Profonda (DBS) e dispositivi medici impiantabili.">
+                      Global leader in manufacturing Deep Brain Stimulation (DBS) systems and implantable medical devices.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Abbott</span> 
+                <span class="location">(Chicago, Illinois, USA)</span> - 
+                <a href="https://www.abbott.com/" class="website-link" target="_blank">abbott.com</a>
+                <span class="description" 
+                      data-en="Provides advanced neuromodulation systems for treating chronic pain and movement disorders." 
+                      data-it="Fornisce sistemi avanzati di neuromodulazione per il trattamento del dolore cronico e dei disturbi del movimento.">
+                      Provides advanced neuromodulation systems for treating chronic pain and movement disorders.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Newronika</span> 
+                <span class="location">(Milan, Italy)</span> - 
+                <a href="https://newronika.com/" class="website-link" target="_blank">newronika.com</a>
+                <span class="description" 
+                      data-en="Develops an adaptive closed-loop deep brain stimulation system capable of recording bioelectric brain activity and automatically adjusting electrical stimulation in real time for Parkinson's disease patients." 
+                      data-it="Sviluppa un sistema stimolazione cerebrale profonda adattiva (closed-loop), capace di registrare l'attività bioelettrica cerebrale e regola automaticamente e in tempo reale la stimolazione elettrica, per pazienti affetti dalla malattia di Parkinson.">
+                      Develops an adaptive closed-loop deep brain stimulation system capable of recording bioelectric brain activity and automatically adjusting electrical stimulation in real time for Parkinson's disease patients.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Neuroloop</span> 
+                <span class="location">(Freiburg, Germany)</span> - 
+                <a href="https://www.neuroloop.de/" class="website-link" target="_blank">neuroloop.de</a>
+                <span class="description" 
+                      data-en="Develops technological platforms for selective vagus nerve stimulation within bioelectronic medicine." 
+                      data-it="Sviluppa piattaforme tecnologiche per la stimolazione selettiva del nervo vago in ambito bioelettronico.">
+                      Develops technological platforms for selective vagus nerve stimulation within bioelectronic medicine.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">NeuroPace</span> 
+                <span class="location">(Mountain View, California, USA)</span> - 
+                <a href="https://www.neuropace.com/" class="website-link" target="_blank">neuropace.com</a>
+                <span class="description" 
+                      data-en="Develops an implantable device that continuously monitors electrocorticographic (ECoG) activity, detects abnormal patterns, and delivers responsive, targeted electrical stimulation to prevent epileptic seizures before clinical onset." 
+                      data-it="Sviluppa un dispositivo impiantabile che monitora continuamente l'attività elettrocorticografica (ECoG), rileva pattern anomali e fornisce una stimolazione elettrica immediata e mirata per prevenire le crisi epilettiche prima della loro insorgenza clinica.">
+                      Develops an implantable device that continuously monitors electrocorticographic (ECoG) activity, detects abnormal patterns, and delivers responsive, targeted electrical stimulation to prevent epileptic seizures before clinical onset.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">ONWARD Medical</span> 
+                <span class="location">(Eindhoven, Netherlands / Lausanne, Switzerland)</span> - 
+                <a href="https://www.onwd.com/" class="website-link" target="_blank">onwd.com</a>
+                <span class="description" 
+                      data-en="Develops neural interfaces and targeted spinal cord stimulation systems (transcutaneous and epidural) to restore voluntary motor control and hemodynamic stability in patients with central nervous system injuries." 
+                      data-it="Sviluppa interfacce neurali e sistemi di stimolazione midollare mirata (transcutanea ed epidurale) per ripristinare il controllo motorio volontario e la stabilità emodinamica in pazienti con lesioni del sistema nervoso centrale.">
+                      Develops neural interfaces and targeted spinal cord stimulation systems (transcutaneous and epidural) to restore voluntary motor control and hemodynamic stability in patients with central nervous system injuries.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">SetPoint Medical</span> 
+                <span class="location">(Valencia, California, USA)</span> - 
+                <a href="https://setpointmedical.com/" class="website-link" target="_blank">setpointmedical.com</a>
+                <span class="description" 
+                      data-en="Produces bioelectronic devices targeted at the treatment of chronic inflammatory diseases." 
+                      data-it="Realizza dispositivi per la medicina bioelettronica mirati al trattamento di patologie infiammatorie croniche.">
+                      Produces bioelectronic devices targeted at the treatment of chronic inflammatory diseases.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Neurosensory and Vestibular Prostheses" data-it="Protesi Neurosensoriali e Vestibolari">Neurosensory and Vestibular Prostheses</h2>
+        <ul>
+            <li>
+                <span class="company-name">Cochlear Ltd</span> 
+                <span class="location">(Sydney, Australia)</span> - 
+                <a href="https://www.cochlear.com/" class="website-link" target="_blank">cochlear.com</a>
+                <span class="description" 
+                      data-en="Global pioneer in manufacturing cochlear implants for hearing function recovery." 
+                      data-it="Pioniere globale nella produzione di impianti cocleari per il recupero della funzione uditiva.">
+                      Global pioneer in manufacturing cochlear implants for hearing function recovery.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">MED-EL</span> 
+                <span class="location">(Innsbruck, Austria)</span> - 
+                <a href="https://www.medel.com/" class="website-link" target="_blank">medel.com</a>
+                <span class="description" 
+                      data-en="Offers implantable hearing solutions along with systems for vestibular and brainstem stimulation." 
+                      data-it="Offre soluzioni impiantabili per l'udito e sistemi per la stimolazione vestibolare e del tronco encefalico.">
+                      Offers implantable hearing solutions along with systems for vestibular and brainstem stimulation.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Science Corporation</span> 
+                <span class="location">(Alameda, California, USA)</span> - 
+                <a href="https://science.xyz/" class="website-link" target="_blank">science.xyz</a>
+                <span class="description" 
+                      data-en="Focused on advanced visual prostheses and neural interfaces to restore sight via the PRIMA system." 
+                      data-it="Focalizzata su protesi visive avanzate e interfacce neurali per il ripristino della vista attraverso il sistema PRIMA.">
+                      Focused on advanced visual prostheses and neural interfaces to restore sight via the PRIMA system.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Phosphoenix</span> 
+                <span class="location">(Amsterdam, Netherlands)</span> - 
+                <a href="https://www.phosphoenix.nl/" class="website-link" target="_blank">phosphoenix.nl</a>
+                <span class="description" 
+                      data-en="Develops visual prostheses based on direct stimulation of the cerebral cortex." 
+                      data-it="Sviluppa protesi visive basate sulla stimolazione diretta della corteccia cerebrale.">
+                      Develops visual prostheses based on direct stimulation of the cerebral cortex.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Advanced Materials and Miniaturization" data-it="Materiali Avanzati e Miniaturizzazione">Advanced Materials and Miniaturization</h2>
+        <ul>
+            <li>
+                <span class="company-name">COR-TEC</span> 
+                <span class="location">(Freiburg, Germany)</span> - 
+                <a href="https://cortec-neuro.com/" class="website-link" target="_blank">cortec-neuro.com</a>
+                <span class="description" 
+                      data-en="Produces closed-loop neural interface components and customized recording/stimulation systems." 
+                      data-it="Produce componenti per interfacce neurali a ciclo chiuso e sistemi di registrazione/stimolazione personalizzati.">
+                      Produce componenti per interfacce neurali a ciclo chiuso e sistemi di registrazione/stimolazione personalizzati.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">NeuroOne</span> 
+                <span class="location">(Eden Prairie, Minnesota, USA)</span> - 
+                <a href="https://nmtc1.com/" class="website-link" target="_blank">nmtc1.com</a>
+                <span class="description" 
+                      data-en="Develops high-definition thin-film electrodes for neurological diagnosis and ablation." 
+                      data-it="Sviluppa elettrodi a film sottile ad alta definizione per la diagnostica neurologica e l'ablazione.">
+                      Develops high-definition thin-film electrodes for neurological diagnosis and ablation.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">GBrain</span> 
+                <span class="location">(Incheon, South Korea)</span> - 
+                <a href="http://gbrainlife.com/" class="website-link" target="_blank">gbrainlife.com</a>
+                <span class="description" 
+                      data-en="Utilizes graphene nanomaterials to produce flexible and biocompatible neural interfaces." 
+                      data-it="Utilizza nanomateriali in grafene per produrre interfacce neurali flessibili e biocompatibili.">
+                      Utilizes graphene nanomaterials to produce flexible and biocompatible neural interfaces.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">INBRAIN Neuroelectronics</span> 
+                <span class="location">(Barcelona, Spain)</span> - 
+                <a href="https://inbrain-neuroelectronics.com/" class="website-link" target="_blank">inbrain-neuroelectronics.com</a>
+                <span class="description" 
+                      data-en="Leveraging the physical properties of graphene, it develops microelectrode arrays with superior electrical charge injection capability and reduced impedance compared to traditional metals, enabling ultra-high-resolution decoding and targeted neuromodulation for conditions such as Parkinson's disease." 
+                      data-it="Sfruttando le proprietà fisiche del grafene, sviluppa matrici di microelettrodi con capacità di iniezione di carica elettrica superiore e un'impedenza ridotta rispetto ai metalli tradizionali, consentendo decodifica ad altissima risoluzione e neuromodulazione mirata per patologie come il morbo di Parkinson.">
+                      Leveraging the physical properties of graphene, it develops microelectrode arrays with superior electrical charge injection capability and reduced impedance compared to traditional metals, enabling ultra-high-resolution decoding and targeted neuromodulation for conditions such as Parkinson's disease.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Mint Neurotechnologies</span> 
+                <span class="location">(London, United Kingdom)</span> - 
+                <a href="https://mintneuro.com/" class="website-link" target="_blank">mintneuro.com</a>
+                <span class="description" 
+                      data-en="Designs semiconductor integrated circuits and miniaturized interfaces for intelligent neural implants." 
+                      data-it="Progetta circuiti integrati a semiconduttore e interfacce miniaturizzate per impianti neurali intelligenti.">
+                      Designs semiconductor integrated circuits and miniaturized interfaces for intelligent neural implants.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Endovascular Interfaces and New Frontiers" data-it="Interfacce Endovascolari e Nuove Frontiere">Endovascular Interfaces and New Frontiers</h2>
+        <ul>
+            <li>
+                <span class="company-name">Synchron</span> 
+                <span class="location">(New York, NY, USA)</span> - 
+                <a href="https://synchron.com/" class="website-link" target="_blank">synchron.com</a>
+                <span class="description" 
+                      data-en="Develops the Stentrode, a brain-computer interface inserted through blood vessels without the need for invasive open surgery." 
+                      data-it="Sviluppa lo Stentrode, un'interfaccia cervello-computer inseribile attraverso i vasi sanguigni senza chirurgia invasiva.">
+                      Develops the Stentrode, a brain-computer interface inserted through blood vessels without the need for invasive open surgery.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Canaery</span> 
+                <span class="location">(Alachua, Florida, USA)</span> - 
+                <a href="https://www.canaery.com/" class="website-link" target="_blank">canaery.com</a>
+                <span class="description" 
+                      data-en="Creates neural interfaces to digitalize olfactory signals for biosensing applications." 
+                      data-it="Realizza interfacce neurali per la digitalizzazione dei segnali olfattivi in contesti di biosensoristica.">
+                      Creates neural interfaces to digitalize olfactory signals for biosensing applications.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Biorobotics and Wearable Exoskeletons" data-it="Biorobotica ed Esoscheletri Indossabili">Biorobotics and Wearable Exoskeletons</h2>
+        <ul>
+            <li>
+                <span class="company-name">Movendo Technology</span> 
+                <span class="location">(Genova, Italy)</span> - 
+                <a href="https://movendo.technology/" class="website-link" target="_blank">movendo.technology</a>
+                <span class="description" 
+                      data-en="Develops Hunova, a clinically validated robotic platform for objective movement evaluation and motor rehabilitation." 
+                      data-it="Sviluppa Hunova, una piattaforma robotica clinicamente validata per la riabilitazione motoria e la valutazione oggettiva del movimento.">
+                      Develops Hunova, a clinically validated robotic platform for objective movement evaluation and motor rehabilitation.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">IUVO</span> 
+                <span class="location">(Pontedera, Italy)</span> - 
+                <a href="https://www.iuvo.company/" class="website-link" target="_blank">iuvo.company</a>
+                <span class="description" 
+                      data-en="A spin-off of the Scuola Superiore Sant'Anna specialized in wearable exoskeletons for clinical assistance and industrial fields." 
+                      data-it="Spin-off della Scuola Superiore Sant'Anna specializzato in esoscheletri indossabili per l'assistenza clinica e l'ambito industriale.">
+                      A spin-off of the Scuola Superiore Sant'Anna specialized in wearable exoskeletons for clinical assistance and industrial fields.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Wandercraft</span> 
+                <span class="location">(Paris, France)</span> - 
+                <a href="https://www.wandercraft.eu/" class="website-link" target="_blank">wandercraft.eu</a>
+                <span class="description" 
+                      data-en="Produces self-balancing and dynamically stable exoskeletons enabling individuals with severe mobility impairments to walk without crutches." 
+                      data-it="Realizza esoscheletri auto-bilancianti e dinamicamente stabili che permettono a persone con gravi disabilità motorie di camminare senza l'uso di stampelle.">
+                      Produces self-balancing and dynamically stable exoskeletons enabling individuals with severe mobility impairments to walk without crutches.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Lifeward</span> 
+                <span class="location">(Marlborough, Massachusetts, USA)</span> - 
+                <a href="https://golifeward.com/" class="website-link" target="_blank">golifeward.com</a>
+                <span class="description" 
+                      data-en="Formerly known as ReWalk Robotics, a leader in exoskeleton systems for rehabilitation and personal use by individuals with spinal cord injuries." 
+                      data-it="Precedentemente nota come ReWalk Robotics, è leader nei sistemi di esoscheletri per la riabilitazione e l'uso personale per individui con lesioni del midollo spinale.">
+                      Formerly known as ReWalk Robotics, a leader in exoskeleton systems for rehabilitation and personal use by individuals with spinal cord injuries.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="In Vitro Microphysiological Systems (Organ-on-a-Chip)" data-it="Sistemi Microfisiologici In Vitro (Organ-on-a-Chip)">In Vitro Microphysiological Systems (Organ-on-a-Chip)</h2>
+        <ul>
+            <li>
+                <span class="company-name">BiomimX</span> 
+                <span class="location">(Milan, Italy)</span> - 
+                <a href="https://biomimx.com/" class="website-link" target="_blank">biomimx.com</a>
+                <span class="description" 
+                      data-en="Develops mechanically active in vitro models (such as uHeart and uGut) replicating human tissue kinetics for advanced preclinical drug screening." 
+                      data-it="Sviluppa modelli in vitro meccanicamente attivi (come uHeart e uGut) che replicano la cinetica dei tessuti umani per screening farmacologici preclinici avanzati.">
+                      Develops mechanically active in vitro models (such as uHeart and uGut) replicating human tissue kinetics for advanced preclinical drug screening.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Foresee Biosystems</span> 
+                <span class="location">(Genova, Italy)</span> - 
+                <a href="https://foreseebiosystems.com/" class="website-link" target="_blank">foreseebiosystems.com</a>
+                <span class="description" 
+                      data-en="Offers platforms for cardiac safety testing that measure intracellular electrical activity in vitro, mitigating chronic toxicity risks in drug development." 
+                      data-it="Offre piattaforme per test di sicurezza cardiaca che misurano l'attività elettrica intracellulare in vitro, riducendo i rischi di tossicità cronica nello sviluppo di farmaci.">
+                      Offers platforms for cardiac safety testing that measure intracellular electrical activity in vitro, mitigating chronic toxicity risks in drug development.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Mimetas</span> 
+                <span class="location">(Leiden, Netherlands)</span> - 
+                <a href="https://mimetas.com/" class="website-link" target="_blank">mimetas.com</a>
+                <span class="description" 
+                      data-en="Provides the OrganoPlate high-throughput microfluidic platform, widely utilized by pharmaceutical companies for modeling complex diseases." 
+                      data-it="Fornisce la piattaforma microfluidica ad alta produttività OrganoPlate, ampiamente utilizzata dalle aziende farmaceutiche per la modellazione di malattie complesse.">
+                      Provides the OrganoPlate high-throughput microfluidic platform, widely utilized by pharmaceutical companies for modeling complex diseases.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Emulate</span> 
+                <span class="location">(Boston, Massachusetts, USA)</span> - 
+                <a href="https://emulatebio.com/" class="website-link" target="_blank">emulatebio.com</a>
+                <span class="description" 
+                      data-en="Pioneer in the development of 'Human Emulation Systems' that recreate human organ microstructures and functions to predict drug responses." 
+                      data-it="Pioniere nello sviluppo di 'Human Emulation Systems' che ricreano la microstruttura e la funzione degli organi umani per prevedere la risposta ai farmaci.">
+                      Pioneer in the development of 'Human Emulation Systems' that recreate human organ microstructures and functions to predict drug responses.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Manava</span> 
+                <span class="location">(Milan, Italy)</span> - 
+                <a href="https://manava.plus/" class="website-link" target="_blank">manava.plus</a>
+                <span class="description" 
+                      data-en="New technology for neuroprostheses capable of integrating patient cells with artificial intelligence-driven biomimetic stimulation, offering personalized treatments for neurological disabilities." 
+                      data-it="Nuova tecnologia per neuroprotesi capace di integrare le cellule del paziente con una stimolazione biomimetica basata sull'intelligenza artificiale, per l'offerta di trattamenti personalizzati nei casi di disabilità neurologiche.">
+                      New technology for neuroprostheses capable of integrating patient cells with artificial intelligence-driven biomimetic stimulation, offering personalized treatments for neurological disabilities.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">React4Life</span> 
+                <span class="location">(Genova, Italy)</span> - 
+                <a href="https://www.react4life.com/about-us/" class="website-link" target="_blank">React4life.com</a>
+                <span class="description" 
+                      data-en="3D tissue models for in vitro fluid dynamic testing." 
+                      data-it="Modelli tissutali 3D per testing fluidodinamici in vitro.">
+                      3D tissue models for in vitro fluid dynamic testing.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Advanced Prostheses and Microsurgical Robotics" data-it="Protesi Avanzate e Robotica Microchirurgica">Advanced Prostheses and Microsurgical Robotics</h2>
+        <ul>
+            <li>
+                <span class="company-name">Prensilia</span> 
+                <span class="location">(Pontedera, Italy)</span> - 
+                <a href="https://www.prensilia.com/" class="website-link" target="_blank">prensilia.com</a>
+                <span class="description" 
+                      data-en="Designs and manufactures anthropomorphic robotic hands (such as the MIA model) used in upper-limb prosthesis research and as end-effectors for BCI interfaces." 
+                      data-it="Progetta e produce mani robotiche antropomorfe (come il modello MIA) utilizzate sia in ambito di ricerca per protesi degli arti superiori che come effettori per interfacce BCI.">
+                      Designs and manufactures anthropomorphic robotic hands (such as the MIA model) used in upper-limb prosthesis research and as end-effectors for BCI interfaces.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Medical Microinstruments - MMI</span> 
+                <span class="location">(Pisa, Italy / Jacksonville, Florida, USA)</span> - 
+                <a href="https://mmimicro.com/" class="website-link" target="_blank">mmimicro.com</a>
+                <span class="description" 
+                      data-en="Developed Symani, a teleoperated robotic platform explicitly designed for supermicrosurgery on millimeter-sized blood vessels and nerves." 
+                      data-it="Ha sviluppato Symani, una piattaforma robotica teleoperata progettata specificamente per la supermicrochirurgia su vasi sanguigni e nervi di dimensioni millimetriche.">
+                      Developed Symani, a teleoperated robotic platform explicitly designed for supermicrosurgery on millimeter-sized blood vessels and nerves.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Ottobock</span> 
+                <span class="location">(Duderstadt, Germany)</span> - 
+                <a href="https://www.ottobock.com/" class="website-link" target="_blank">ottobock.com</a>
+                <span class="description" 
+                      data-en="European global leader in developing advanced prosthetic devices, orthoses, and bionic mobility solutions." 
+                      data-it="Leader globale europeo nello sviluppo di dispositivi protesici avanzati, ortesi e soluzioni per la mobilità bionica.">
+                      European global leader in developing advanced prosthetic devices, orthoses, and bionic mobility solutions.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">CMR Surgical</span> 
+                <span class="location">(Cambridge, United Kingdom)</span> - 
+                <a href="https://cmrsurgical.com/" class="website-link" target="_blank">cmrsurgical.com</a>
+                <span class="description" 
+                      data-en="Develops Versius, a small, modular surgical robotic system designed to make minimal-access surgery more flexible and affordable." 
+                      data-it="Sviluppa Versius, un sistema robotico chirurgico modulare e di dimensioni ridotte progettato per rendere la chirurgia mininvasiva più accessibile e flessibile.">
+                      Develops Versius, a small, modular surgical robotic system designed to make minimal-access surgery more flexible and affordable.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Advanced Materials and Bioelectronic Components" data-it="Materiali Avanzati e Componentistica Bioelettronica">Advanced Materials and Bioelectronic Components</h2>
+        <ul>
+            <li>
+                <span class="company-name">WISE Srl</span> 
+                <span class="location">(Milan, Italy)</span> - 
+                <a href="https://wiseneuro.com/" class="website-link" target="_blank">wiseneuro.com</a>
+                <span class="description" 
+                      data-en="Uses a proprietary process (SCBI) to integrate metallic nanoparticles into elastomeric polymers, creating highly flexible, conformable, low-impedance cortical and spinal electrodes." 
+                      data-it="Utilizza un processo proprietario (SCBI) per integrare nanoparticelle metalliche in polimeri elastomerici, creando elettrodi corticali e spinali altamente flessibili, conformabili e a bassa impedenza.">
+                      Uses a proprietary process (SCBI) to integrate metallic nanoparticles into elastomeric polymers, creating highly flexible, conformable, low-impedance cortical and spinal electrodes.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Synergia Medical</span> 
+                <span class="location">(Mont-Saint-Guibert, Belgium)</span> - 
+                <a href="https://synergia-medical.com/" class="website-link" target="_blank">synergia-medical.com</a>
+                <span class="description" 
+                      data-en="Develops neurostimulation devices (such as vagus nerve stimulation) based on optoelectronics, replacing metal wires with optical fibers to ensure full MRI compatibility." 
+                      data-it="Sviluppa dispositivi per la neurostimolazione (come la stimolazione del nervo vago) basati sull'optoelettronica, sostituendo i cavi metallici con fibre ottiche per garantire la piena compatibilità con la risonanza magnetica (MRI).">
+                      Develops neurostimulation devices (such as vagus nerve stimulation) based on optoelectronics, replacing metal wires with optical fibers to ensure full MRI compatibility.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Heraeus Medevio</span> 
+                <span class="location">(Hanau, Germany)</span> - 
+                <a href="https://heraeus-medevio.com/" class="website-link" target="_blank">heraeus-medevio.com</a>
+                <span class="description" 
+                      data-en="Global supplier of critical components and engineered materials for implantable medical devices, including high-performance electrodes for neuromodulation systems." 
+                      data-it="Fornitore globale di componenti critici e materiali ingegnerizzati per dispositivi medici impiantabili, inclusi elettrodi ad alte prestazioni per sistemi di neuromodulazione.">
+                      Global supplier of critical components and engineered materials for implantable medical devices, including high-performance electrodes for neuromodulation systems.
+                </span>
+            </li>
+        </ul>
+
+        <h2 data-en="Mirandola Biomedical District (Filtration, Extracorporeal Therapies, and Disposables)" data-it="Distretto Biomedicale di Mirandola (Filtrazione, Terapie Extracorporee e Disposables)">Mirandola Biomedical District (Filtration, Extracorporeal Therapies, and Disposables)</h2>
+        <ul>
+            <li>
+                <span class="company-name">Medtronic (Bellco/DAR/Mozarc)</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.medtronic.com/" class="website-link" target="_blank">medtronic.com</a>
+                <span class="description" 
+                      data-en="US multinational with integrated infrastructure within the district, focusing on high-efficiency anesthesiology filtration devices and life-saving solutions for renal diseases in adult and pediatric intensive care." 
+                      data-it="Multinazionale statunitense con infrastruttura integrata nel distretto, focalizzata su dispositivi di filtrazione anestesiologica ad alta efficienza e soluzioni salvavita per patologie renali in terapia intensiva pediatrica e per adulti.">
+                      US multinational with integrated infrastructure within the district, focusing on high-efficiency anesthesiology filtration devices and life-saving solutions for renal diseases in adult and pediatric intensive care.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">LivaNova</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.livanova.com/" class="website-link" target="_blank">livanova.com</a>
+                <span class="description" 
+                      data-en="Global leader holding the worldwide operational headquarters of its Cardiopulmonary Business Unit in Mirandola; manufactures heart-lung machines, blood oxygenators, and autotransfusion systems." 
+                      data-it="Leader globale con quartier generale operativo mondiale della Business Unit Cardiopulmonary a Mirandola; produce macchine cuore-polmone, ossigenatori ematici e sistemi di autotrasfusione.">
+                      Global leader holding the worldwide operational headquarters of its Cardiopulmonary Business Unit in Mirandola; manufactures heart-lung machines, blood oxygenators, and autotransfusion systems.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Medica Group</span> 
+                <span class="location">(Medolla, Modena, Italy)</span> - 
+                <a href="https://www.medica-spa.com/" class="website-link" target="_blank">medica-spa.com</a>
+                <span class="description" 
+                      data-en="Leading company in polymer hollow-fiber membrane extrusion, producing hemodialysis filters, water purification systems, and therapeutic apheresis platforms." 
+                      data-it="Azienda leader nell'estrusione di membrane a fibre cave polimeriche, produce filtri per emodialisi, sistemi di purificazione acqua e piattaforme per l'aferesi terapeutica.">
+                      Leading company in polymer hollow-fiber membrane extrusion, producing hemodialysis filters, water purification systems, and therapeutic apheresis platforms.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">HMC Premedical</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.hmcgroup.it/" class="website-link" target="_blank">hmcgroup.it</a>
+                <span class="description" 
+                      data-en="Benefit Corporation specializing in high-tech disposable devices (urology, infusion, drainage) and non-invasive respiratory ventilation systems." 
+                      data-it="Società Benefit specializzata in dispositivi monouso ad alta tecnologia (urologia, infusione, drenaggio) e sistemi per la Ventilazione Respiratoria Non Invasiva.">
+                      Benefit Corporation specializing in high-tech disposable devices (urology, infusion, drainage) and non-invasive respiratory ventilation systems.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Fresenius Kabi (Fresenius HemoCare Italia)</span> 
+                <span class="location">(Cavezzo, Modena, Italy)</span> - 
+                <a href="https://www.fresenius-kabi.com/" class="website-link" target="_blank">fresenius-kabi.com</a>
+                <span class="description" 
+                      data-en="Manufacturing center of excellence part of the German group, focused on large-scale design and fabrication of filters for blood treatment and separation." 
+                      data-it="Polo produttivo d'eccellenza parte del gruppo tedesco, focalizzato sulla progettazione e fabbricazione su larga scala di filtri per il trattamento e la separazione del sangue.">
+                      Manufacturing center of excellence part of the German group, focused on large-scale design and fabrication of filters for blood treatment and separation.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">B. Braun Avitum</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.bbraun.it/" class="website-link" target="_blank">bbraun.it</a>
+                <span class="description" 
+                      data-en="Division of the German group acting as a strategic district partner for infusion systems, wound care, and extracorporeal therapies." 
+                      data-it="Divisione del gruppo tedesco che opera nel distretto come partner strategico per sistemi di infusione, wound care e terapie extracorporee.">
+                      Division of the German group acting as a strategic district partner for infusion systems, wound care, and extracorporeal therapies.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Encaplast</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.encaplast.com/" class="website-link" target="_blank">encaplast.com</a>
+                <span class="description" 
+                      data-en="Hyper-specialized in customized flexible packaging inside contamination-controlled environments (cleanrooms) for disposable and implantable medical devices." 
+                      data-it="Iper-specializzata nel packaging flessibile personalizzato in ambienti a contaminazione controllata (camere bianche) per dispositivi medici monouso e impiantabili.">
+                      Hyper-specialized in customized flexible packaging inside contamination-controlled environments (cleanrooms) for disposable and implantable medical devices.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Eurosets</span> 
+                <span class="location">(Medolla, Modena, Italy)</span> - 
+                <a href="https://www.eurosets.com/" class="website-link" target="_blank">eurosets.com</a>
+                <span class="description" 
+                      data-en="An advanced cardiac surgery and acute cardio-respiratory support company, recognized for ECMO, E-CPR, and negative-pressure wound therapy systems." 
+                      data-it="Azienda all'avanguardia in cardiochirurgia e supporto cardio-respiratorio acuto, nota per sistemi ECMO, E-CPR e medicazioni a pressione negativa.">
+                      An advanced cardiac surgery and acute cardio-respiratory support company, recognized for ECMO, E-CPR, and negative-pressure wound therapy systems.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Intersurgical S.p.A.</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://intersurgical.it/" class="website-link" target="_blank">intersurgical.it</a>
+                <span class="description" 
+                      data-en="Global division specialized in laryngeal masks, CPAP systems, intensive ventilation circuits, and bacteriological filters manufactured in cleanrooms." 
+                      data-it="Divisione globale specializzata in maschere laringee, sistemi CPAP, circuiti per ventilazione intensiva e filtri batteriologici fabbricati in camera bianca.">
+                      Global division specialized in laryngeal masks, CPAP systems, intensive ventilation circuits, and bacteriological filters manufactured in cleanrooms.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Haemotronic (GVS Group)</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.haemotronic.it/" class="website-link" target="_blank">haemotronic.it</a>
+                <span class="description" 
+                      data-en="Key provider of custom plastic components, extruded tubing lines, and PVC bags for blood and blood derivative transfers." 
+                      data-it="Fornitore chiave di componenti plastici customizzati, sistemi di tubaggio estruso e sacche in PVC per il trasferimento di sangue ed emoderivati.">
+                      Key provider of custom plastic components, extruded tubing lines, and PVC bags for blood and blood derivative transfers.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Sidam Group</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://sidamgroup.com/" class="website-link" target="_blank">sidamgroup.com</a>
+                <span class="description" 
+                      data-en="Leader in manufacturing injection lines for contrast agents and shielded systems for radiopharmaceutical handling in nuclear medicine." 
+                      data-it="Leader nella produzione di linee di infusione per mezzi di contrasto e sistemi schermati per la manipolazione di radiofarmaci in medicina nucleare.">
+                      Leader in manufacturing injection lines for contrast agents and shielded systems for radiopharmaceutical handling in nuclear medicine.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Mold&Mold</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.distrettobiomedicale.it/" class="website-link" target="_blank">distrettobiomedicale.it</a>
+                <span class="description" 
+                      data-en="Contract manufacturer specialized in medical plastic injection molding inside ISO 7 and ISO 8 cleanrooms for major global OEMs." 
+                      data-it="Terzista specializzato nello stampaggio a iniezione di materie plastiche medicali in camere bianche ISO 7 e ISO 8 per i principali OEM globali.">
+                      Contract manufacturer specialized in medical plastic injection molding inside ISO 7 and ISO 8 cleanrooms for major global OEMs.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Deltamed</span> 
+                <span class="location">(Viadana, Mantova, Italy)</span> - 
+                <a href="https://www.deltamed.pro/" class="website-link" target="_blank">deltamed.pro</a>
+                <span class="description" 
+                      data-en="Integrated into the district's logistics network, it is a leader in developing safety-integrated catheters and deep vascular access systems." 
+                      data-it="Integrata nella rete logistica del distretto, è leader nello sviluppo di cateteri a sicurezza integrata e sistemi di accesso vascolare profondo.">
+                      Integrated into the district's logistics network, it is a leader in developing safety-integrated catheters and deep vascular access systems.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">BPB Medica (Biopsybell)</span> 
+                <span class="location">(Mirandola, Modena, Italy)</span> - 
+                <a href="https://www.biopsybell.com/" class="website-link" target="_blank">biopsybell.com</a>
+                <span class="description" 
+                      data-en="Verticalized company specialized in biopsy needles, assisted reproductive technology (ART) devices, and minimally invasive spinal surgery solutions." 
+                      data-it="Azienda verticalizzata specializzata in aghi per biopsia, dispositivi per fecondazione assistita (ART) e soluzioni mini-invasive per la chirurgia spinale.">
+                      Verticalized company specialized in biopsy needles, assisted reproductive technology (ART) devices, and minimally invasive spinal surgery solutions.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">G21</span> 
+                <span class="location">(San Possidonio, Modena, Italy)</span> - 
+                <a href="https://www.g-21.it/" class="website-link" target="_blank">g-21.it</a>
+                <span class="description" 
+                      data-en="Internationally recognized for designing and synthesizing advanced acrylic bone cements for orthopedic and spinal surgery." 
+                      data-it="Riconosciuta internazionalmente per la progettazione e sintesi di cementi ossei acrilici avanzati per ortopedia e chirurgia spinale.">
+                      Internationally recognized for designing and synthesizing advanced acrylic bone cements for orthopedic and spinal surgery.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Tecnoline</span> 
+                <span class="location">(Concordia sulla Secchia, Modena, Italy)</span> - 
+                <a href="https://tecnolinemed.com/" class="website-link" target="_blank">tecnolinemed.com</a>
+                <span class="description" 
+                      data-en="Specialized in biocontainment bags for transporting infectious patients, alongside dialysate and infusion line production." 
+                      data-it="Specializzata in sacche di bio-contenimento per il trasporto di pazienti infettivi e nella produzione di linee di dialisi e infusione.">
+                      Specialized in biocontainment bags for transporting infectious patients, alongside dialysate and infusion line production.
+                </span>
+            </li>
+            <li>
+                <span class="company-name">Rigenerand (Evotec Group)</span> 
+                <span class="location">(Medolla, Modena, Italy)</span> - 
+                <a href="https://evotec.com/" class="website-link" target="_blank">evotec.com</a>
+                <span class="description" 
+                      data-en="A premier cell factory focused on bioreactors for in vitro stem cell expansion, oncology research, and gene therapies." 
+                      data-it="Cell factory d'eccellenza focalizzata su bioreattori per l'espansione in vitro di cellule staminali, ricerca oncologica e terapie geniche.">
+                      A premier cell factory focused on bioreactors for in vitro stem cell expansion, oncology research, and gene therapies.
+                </span>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'it' : 'en';
+            document.documentElement.lang = currentLang;
+            
+            // Update the text of the language button
+            document.getElementById('langToggle').innerText = currentLang === 'en' ? 'IT' : 'EN';
+            
+            // Iterate over all elements containing data-en and data-it attributes
+            document.querySelectorAll('[data-en][data-it]').forEach(el => {
+                const translation = el.getAttribute(`data-${currentLang}`);
+                el.innerText = translation;
+            });
+        }
+
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            
+            const themeBtn = document.getElementById('themeToggle');
+            if (newTheme === 'dark') {
+                themeBtn.setAttribute('data-en', 'Light Theme');
+                themeBtn.setAttribute('data-it', 'Tema Chiaro');
+            } else {
+                themeBtn.setAttribute('data-en', 'Dark Theme');
+                themeBtn.setAttribute('data-it', 'Tema Scuro');
+            }
+            themeBtn.innerText = themeBtn.getAttribute(`data-${currentLang}`);
+        }
+    </script>
+</body>
+</html>
+
+
+
+

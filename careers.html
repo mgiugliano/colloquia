@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioengineering Career Alignment Assessment</title>
+    <style>
+        /* --- COLOR THEME & VARIABLES --- */
+        :root {
+            --primary: #0f766e; /* Medical Teal */
+            --primary-hover: #0d5f58;
+            --secondary: #0369a1; /* Tech Blue */
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --border-color: #e2e8f0;
+            --success: #16a34a;
+            --option-bg: #f1f5f9;
+            --option-hover: #e2e8f0;
+            --panel-bg: #f0fdfa;
+            --panel-border: #99f6e4;
+        }
+
+        /* --- DARK THEME OVERRIDES --- */
+        body.dark-theme {
+            --bg-color: #0f172a; /* Slate 900 */
+            --card-bg: #1e293b; /* Slate 800 */
+            --text-main: #f1f5f9; /* Slate 100 */
+            --text-light: #94a3b8; /* Slate 400 */
+            --border-color: #334155; /* Slate 700 */
+            --option-bg: #334155; /* Slate 700 */
+            --option-hover: #475569; /* Slate 600 */
+            --panel-bg: #115e59; /* Teal 800 */
+            --panel-border: #14b8a6; /* Teal 500 */
+            --secondary: #38bdf8; /* Sky 400 */
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* --- CONTROL UTILITIES BAR --- */
+        .controls-bar {
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn-toggle {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-toggle:hover {
+            border-color: var(--primary);
+            background-color: var(--option-bg);
+        }
+
+        /* --- HEADER STYLES --- */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .header h1 {
+            color: var(--secondary);
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .header h2 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 20px auto 0 auto;
+        }
+
+        /* --- QUESTION CARDS & CUSTOM INPUTS --- */
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+
+        .question-card h3 {
+            margin-top: 0;
+            color: var(--text-main);
+            font-size: 1.15rem;
+            margin-bottom: 20px;
+        }
+
+        .options input[type="radio"] {
+            display: none;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
+            margin: 10px 0;
+            background: var(--option-bg);
+            border: 2px solid transparent;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .options label:hover {
+            background: var(--option-hover);
+        }
+
+        .options input[type="radio"]:checked + label {
+            background: var(--panel-bg);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        body.dark-theme .options input[type="radio"]:checked + label {
+            color: #ccfbf1;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-primary {
+            display: block;
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 40px;
+            transition: background 0.3s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(3, 105, 161, 0.3);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.1);
+            transform: translateY(-2px);
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-secondary {
+            flex: 1;
+            background: var(--card-bg);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        body.dark-theme .btn-secondary {
+            border-color: var(--panel-border);
+            color: var(--panel-border);
+        }
+        body.dark-theme .btn-secondary:hover {
+            background: var(--panel-border);
+            color: #0f172a;
+        }
+
+        #error-msg {
+            color: #ef4444;
+            background: #fef2f2;
+            border: 1px solid #f87171;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+        body.dark-theme #error-msg {
+            background: #451a03;
+            border-color: #78350f;
+            color: #fef3c7;
+        }
+
+        /* --- RESULTS DASHBOARD --- */
+        #results-container {
+            display: none;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            margin-top: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-top: 6px solid var(--primary);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .track-result { margin-bottom: 25px; }
+
+        .track-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .progress-bar-bg {
+            background: var(--border-color);
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #2dd4bf);
+            width: 0%;
+            border-radius: 12px;
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .hybrid-alert {
+            background: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin-top: 35px;
+            border-radius: 8px;
+            color: var(--primary);
+        }
+        body.dark-theme .hybrid-alert {
+            color: #ccfbf1;
+        }
+
+        /* --- PRINT CONFIGURATIONS --- */
+        @media print {
+            body { background: white !important; padding: 0; color: black !important; }
+            .no-print { display: none !important; }
+            .question-card { break-inside: avoid; box-shadow: none !important; border: 1px solid #ccc !important; margin-bottom: 15px; background: white !important;}
+            #results-container { box-shadow: none !important; border: 2px solid #000 !important; background: white !important;}
+            .progress-bar-bg { border: 1px solid #000 !important; background: #e2e8f0 !important; }
+            .progress-bar-fill { background: #555 !important; }
+            .options label { background: white !important; color: black !important; border: 1px solid #ccc !important; }
+            .options input[type="radio"]:checked + label { font-weight: bold; border: 2px solid black !important; background: #eee !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="controls-bar no-print">
+        <button type="button" class="btn-toggle" onclick="toggleTheme()" id="themeBtn">🌙 Dark Mode</button>
+        <button type="button" class="btn-toggle" onclick="toggleLanguage()" id="langBtn">🇮🇹 Italiano</button>
+    </div>
+
+    <div class="header">
+        <h1 data-en="Colloquia in Bioengineering" data-it="Colloquia in Bioengineering">Colloquia in Bioengineering</h1>
+        <h2 data-en="Career Profile" data-it="Profilo di Carriera">Career Profile</h2>
+        <p class="no-print" 
+           data-en="For each question, select the single option that best mirror your natural instinct and preferences in bioengineering. Once you answer all questions, you can generate a career profile that may serve as a starting point for a discussion. It is NOT at all 'written in stone' and has no guarantee of correctness or completeness."
+           data-it="Per ogni domanda, seleziona la singola opzione che riflette meglio il tuo istinto naturale e le tue preferenze in bioingegneria. Dopo aver risposto a tutte le domande, potrai generare un profilo di carriera che fungerà da punto di partenza per una discussione. NON è affatto 'scritto sulla pietra' e non ha alcuna garanzia di correttezza o completezza.">
+            For each question, select the single option that best mirror your natural instinct and preferences in bioengineering. Once you answer all questions, you can generate a career profile that may serve as a starting point for a discussion. It is NOT at all "written in stone" and has no guarantee of correctness or completeness.
+        </p>
+    </div>
+
+    <form id="careerQuiz">
+
+        <!-- QUESTION 1 -->
+        <div class="question-card" data-q="1">
+            <h3 data-en="1. Which phase of the medical device lifecycle excites you the most?" data-it="1. Quale fase del ciclo di vita di un dispositivo medico ti appassiona di più?">1. Which phase of the medical device lifecycle excites you the most?</h3>
+            <div class="options">
+                <input type="radio" id="q1a" name="q1" value="TC"><label for="q1a" data-en="Designing predictive algorithms and processing data." data-it="Progettazione di algoritmi predittivi ed elaborazione dati.">Designing predictive algorithms and processing data.</label>
+                <input type="radio" id="q1b" name="q1" value="BM"><label for="q1b" data-en="Securing funding and defining the business model." data-it="Ottenimento di finanziamenti e definizione del modello di business.">Securing funding and defining the business model.</label>
+                <input type="radio" id="q1c" name="q1" value="HS"><label for="q1c" data-en="Validating the device efficacy in a clinical setting." data-it="Validazione dell'efficacia del dispositivo in un contesto clinico.">Validating the device efficacy in a clinical setting.</label>
+                <input type="radio" id="q1d" name="q1" value="CD"><label for="q1d" data-en="Designing the user interface and optimizing ergonomics." data-it="Progettazione dell'interfaccia utente e ottimizzazione dell'ergonomia.">Designing the user interface and optimizing ergonomics.</label>
+                <input type="radio" id="q1e" name="q1" value="ED"><label for="q1e" data-en="Building the physical prototype (CAD, circuits, biomaterials)." data-it="Realizzazione del prototipo fisico (CAD, circuiti, biomateriali).">Building the physical prototype (CAD, circuits, biomaterials).</label>
+                <input type="radio" id="q1f" name="q1" value="MC"><label for="q1f" data-en="Navigating FDA/CE approvals and standardizing quality." data-it="Gestione delle approvazioni FDA/CE e standardizzazione della qualità.">Navigating FDA/CE approvals and standardizing quality.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 2 -->
+        <div class="question-card" data-q="2">
+            <h3 data-en="2. Faced with a failing prototype, your first instinct is to:" data-it="2. Di fronte a un prototipo malfunzionante, il tuo primo istinto è:">2. Faced with a failing prototype, your first instinct is to:</h3>
+            <div class="options">
+                <input type="radio" id="q2a" name="q2" value="TC"><label for="q2a" data-en="Check the numerical simulations and code logs." data-it="Controllare le simulazioni numeriche e i log del codice.">Check the numerical simulations and code logs.</label>
+                <input type="radio" id="q2b" name="q2" value="BM"><label for="q2b" data-en="Assess how the delay impacts the project budget and timeline." data-it="Valutare l'impatto del ritardo sul budget e sulla tempistica del progetto.">Assess how the delay impacts the project budget and timeline.</label>
+                <input type="radio" id="q2c" name="q2" value="HS"><label for="q2c" data-en="Consult with physicians to see if the failure affects clinical use." data-it="Consultare i medici per verificare se il guasto influisca sull'uso clinico.">Consult with physicians to see if the failure affects clinical use.</label>
+                <input type="radio" id="q2d" name="q2" value="CD"><label for="q2d" data-en="Re-evaluate how the user is interacting with the device." data-it="Rivalutare il modo in cui l'utente interagisce con il dispositivo.">Re-evaluate how the user is interacting with the device.</label>
+                <input type="radio" id="q2e" name="q2" value="ED"><label for="q2e" data-en="Get out the multimeter or test the material properties." data-it="Prendere il multimetro o testare le proprietà dei materiali.">Get out the multimeter or test the material properties.</label>
+                <input type="radio" id="q2f" name="q2" value="MC"><label for="q2f" data-en="Check if the failure violates safety compliance standards." data-it="Verificare se il malfunzionamento violi gli standard di conformità e sicurezza.">Check if the failure violates safety compliance standards.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 3 -->
+        <div class="question-card" data-q="3">
+            <h3 data-en="3. Where is your ideal day-to-day professional environment?" data-it="3. Qual è il tuo ambiente professionale quotidiano ideale?">3. Where is your ideal day-to-day professional environment?</h3>
+            <div class="options">
+                <input type="radio" id="q3a" name="q3" value="TC"><label for="q3a" data-en="At a PC workstation with access to large datasets and compute power." data-it="Presso una stazione PC con accesso a grandi set di dati e potenza di calcolo.">At a PC workstation with access to large datasets and compute power.</label>
+                <input type="radio" id="q3b" name="q3" value="BM"><label for="q3b" data-en="In pitch meetings and cross-functional strategy sessions." data-it="In riunioni di pitch e sessioni di strategia interfunzionali.">In pitch meetings and cross-functional strategy sessions.</label>
+                <input type="radio" id="q3c" name="q3" value="HS"><label for="q3c" data-en="Inside a hospital ward or clinical research facility." data-it="All'interno di un reparto ospedaliero o di una struttura di ricerca clinica.">Inside a hospital ward or clinical research facility.</label>
+                <input type="radio" id="q3d" name="q3" value="CD"><label for="q3d" data-en="In a design studio sketching and mapping user journeys." data-it="In uno studio di progettazione a tracciare schizzi e mappare i percorsi dell'utente.">In a design studio sketching and mapping user journeys.</label>
+                <input type="radio" id="q3e" name="q3" value="ED"><label for="q3e" data-en="At a lab bench surrounded by oscilloscopes, pipettes, PCB testing boards." data-it="Presso un banco di laboratorio circondato da oscilloscopi, pipette, schede di test PCB.">At a lab bench surrounded by oscilloscopes, pipettes, PCB testing boards.</label>
+                <input type="radio" id="q3f" name="q3" value="MC"><label for="q3f" data-en="Managing documentation and leading audit reviews." data-it="Gestione della documentazione e conduzione di revisioni di audit.">Managing documentation and leading audit reviews.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 4 -->
+        <div class="question-card" data-q="4">
+            <h3 data-en="4. When reading a (scientific) paper or the news on a new med-tech device, you naturally focus on:" data-it="4. Quando leggi un articolo scientifico o le novità su un nuovo dispositivo med-tech, ti concentri naturalmente su:">4. When reading a (scientific) paper or the news on a new med-tech device, you naturally focus on:</h3>
+            <div class="options">
+                <input type="radio" id="q4a" name="q4" value="TC"><label for="q4a" data-en="The mathematical models and data analysis methods." data-it="Modelli matematici e metodi di analisi dei dati.">The mathematical models and data analysis methods.</label>
+                <input type="radio" id="q4b" name="q4" value="BM"><label for="q4b" data-en="The commercial gap in the market the authors are addressing." data-it="Divario commerciale nel mercato che gli autori stanno affrontando.">The commercial gap in the market the authors are addressing.</label>
+                <input type="radio" id="q4c" name="q4" value="HS"><label for="q4c" data-en="The patient outcomes and physiological impact." data-it="Risultati clinici per il paziente e impatto fisiologico.">The patient outcomes and physiological impact.</label>
+                <input type="radio" id="q4d" name="q4" value="CD"><label for="q4d" data-en="The novelty and intuitiveness of the proposed design." data-it="Novità e intuitività del design proposto.">The novelty and intuitiveness of the proposed design.</label>
+                <input type="radio" id="q4e" name="q4" value="ED"><label for="q4e" data-en="The specific experimental setup and materials used." data-it="Configurazione sperimentale specifica e materiali utilizzati.">The specific experimental setup and materials used.</label>
+                <input type="radio" id="q4f" name="q4" value="MC"><label for="q4f" data-en="The safety protocols and limitations of the study." data-it="Protocolli di sicurezza e limitazioni dello studio.">The safety protocols and limitations of the study.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 5 -->
+        <div class="question-card" data-q="5">
+            <h3 data-en="5. If you could take one additional course right now, it would be:" data-it="5. Se potessi seguire un corso aggiuntivo in questo momento, sarebbe:">5. If you could take one additional course right now, it would be:</h3>
+            <div class="options">
+                <input type="radio" id="q5a" name="q5" value="TC"><label for="q5a" data-en="Machine Learning in Healthcare." data-it="Machine Learning nell'assistenza sanitaria.">Machine Learning in Healthcare.</label>
+                <input type="radio" id="q5b" name="q5" value="BM"><label for="q5b" data-en="Technology Transfer and Intellectual Property (IP)." data-it="Trasferimento tecnologico e proprietà intellettuale (IP).">Technology Transfer and Intellectual Property (IP).</label>
+                <input type="radio" id="q5c" name="q5" value="HS"><label for="q5c" data-en="Advanced Human Anatomy & Pathophysiology." data-it="Anatomia umana avanzata e fisiopatologia.">Advanced Human Anatomy & Pathophysiology.</label>
+                <input type="radio" id="q5d" name="q5" value="CD"><label for="q5d" data-en="Human-Computer Interaction (HCI)." data-it="Interazione Uomo-Macchina (HCI).">Human-Computer Interaction (HCI).</label>
+                <input type="radio" id="q5e" name="q5" value="ED"><label for="q5e" data-en="Advanced Biomechanics or Embedded Systems." data-it="Biomeccanica avanzata o sistemi embedded.">Advanced Biomechanics or Embedded Systems.</label>
+                <input type="radio" id="q5f" name="q5" value="MC"><label for="q5f" data-en="Global Medical Device Regulation." data-it="Regolamentazione globale dei dispositivi medici.">Global Medical Device Regulation.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 6 -->
+        <div class="question-card" data-q="6">
+            <h3 data-en="6. In a group project or activity, you usually end up or you imagine yourself as being the person who:" data-it="6. In un progetto o attività di gruppo, di solito finisci per essere o ti immagini come la persona che:">6. In a group project or activity, you usually end up or you imagine yourself as being the person who:</h3>
+            <div class="options">
+                <input type="radio" id="q6a" name="q6" value="TC"><label for="q6a" data-en="Writes the scripts to process the raw experimental data." data-it="Scrive gli script per elaborare i dati sperimentali grezzi.">Writes the scripts to process the raw experimental data.</label>
+                <input type="radio" id="q6b" name="q6" value="BM"><label for="q6b" data-en="Manages the timeline and ensures everyone hits deadlines." data-it="Gestisce la tempistica e si assicura che tutti rispettino le scadenze.">Manages the timeline and ensures everyone hits deadlines.</label>
+                <input type="radio" id="q6c" name="q6" value="HS"><label for="q6c" data-en="Explains how the project actually benefits a human patient." data-it="Spiega in che modo il progetto porta un beneficio effettivo a un paziente umano.">Explains how the project actually benefits a human patient.</label>
+                <input type="radio" id="q6d" name="q6" value="CD"><label for="q6d" data-en="Makes the final presentation and device look professional." data-it="Cura la presentazione finale e rende l'aspetto del dispositivo professionale.">Makes the final presentation and device look professional.</label>
+                <input type="radio" id="q6e" name="q6" value="ED"><label for="q6e" data-en="Machines parts, 3D prints, or wires the breadboard." data-it="Lavora alle macchine utensili, stampa in 3D o cabla la breadboard.">Machines parts, 3D prints, or wires the breadboard.</label>
+                <input type="radio" id="q6f" name="q6" value="MC"><label for="q6f" data-en="Double-checks the grading rubric to ensure nothing is missed." data-it="Controlla attentamente i criteri di valutazione per assicurarsi che nulla venga tralasciato.">Double-checks the grading rubric to ensure nothing is missed.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 7 -->
+        <div class="question-card" data-q="7">
+            <h3 data-en="7. You prefer to work with data that is:" data-it="7. Preferisci lavorare con dati che siano:">7. You prefer to work with data that is:</h3>
+            <div class="options">
+                <input type="radio" id="q7a" name="q7" value="TC"><label for="q7a" data-en="Massive and complex (e.g., EEG signals, genomic sequences)." data-it="Massivi e complessi (es. segnali EEG, sequenze genomiche).">Massive and complex (e.g., EEG signals, genomic sequences).</label>
+                <input type="radio" id="q7b" name="q7" value="BM"><label for="q7b" data-en="Strategic (e.g., market size, competitor pricing, ROI)." data-it="Strategici (es. dimensioni del mercato, prezzi della concorrenza, ROI).">Strategic (e.g., market size, competitor pricing, ROI).</label>
+                <input type="radio" id="q7c" name="q7" value="HS"><label for="q7c" data-en="Physiological (e.g., vitals, patient recovery rates)." data-it="Fisiologici (es. parametri vitali, tassi di recupero dei pazienti).">Physiological (e.g., vitals, patient recovery rates).</label>
+                <input type="radio" id="q7d" name="q7" value="CD"><label for="q7d" data-en="Qualitative (e.g., user feedback, usability metrics)." data-it="Qualitativi (es. feedback degli utenti, metriche di usabilità).">Qualitative (e.g., user feedback, usability metrics).</label>
+                <input type="radio" id="q7e" name="q7" value="ED"><label for="q7e" data-en="Physical (e.g., material stress/strain curves, voltage outputs)." data-it="Fisici (es. curve stress/strain dei materiali, output di tensione).">Physical (e.g., material stress/strain curves, voltage outputs).</label>
+                <input type="radio" id="q7f" name="q7" value="MC"><label for="q7f" data-en="Procedural (e.g., quality control statistics, defect rates)." data-it="Procedurali (es. statistiche di controllo qualità, tassi di difettosità).">Procedural (e.g., quality control statistics, defect rates).</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 8 -->
+        <div class="question-card" data-q="8">
+            <h3 data-en="8. Your 'dream' first job title right after graduation is:" data-it="8. Il titolo del tuo lavoro ideale subito dopo la laurea è:">8. Your "dream" first job title right after graduation is:</h3>
+            <div class="options">
+                <input type="radio" id="q8a" name="q8" value="TC"><label for="q8a" data-en="Bioinformatics or Systems Modeler." data-it="Bioinformatico o Modellatore di sistemi.">Bioinformatics or Systems Modeler.</label>
+                <input type="radio" id="q8b" name="q8" value="BM"><label for="q8b" data-en="Junior MedTech Analyst or Startup Founder." data-it="Analista MedTech Junior o Fondatore di startup.">Junior MedTech Analyst or Startup Founder.</label>
+                <input type="radio" id="q8c" name="q8" value="HS"><label for="q8c" data-en="Clinical Engineer embedded in a hospital." data-it="Ingegnere clinico inserito in un ospedale.">Clinical Engineer embedded in a hospital.</label>
+                <input type="radio" id="q8d" name="q8" value="CD"><label for="q8d" data-en="UX Researcher for Medical Applications." data-it="Ricercatore UX per applicazioni mediche.">UX Researcher for Medical Applications.</label>
+                <input type="radio" id="q8e" name="q8" value="ED"><label for="q8e" data-en="R&D Bioengineer." data-it="Bioingegnere R&D.">R&D Bioengineer.</label>
+                <input type="radio" id="q8f" name="q8" value="MC"><label for="q8f" data-en="Regulatory Affairs or Quality Assurance Specialist." data-it="Specialista in affari regolatori o assicurazione qualità.">Regulatory Affairs or Quality Assurance Specialist.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 9 -->
+        <div class="question-card" data-q="9">
+            <h3 data-en="9. When dealing with extreme project ambiguity, you instinctively prefer to:" data-it="9. Quando affronti un'estrema ambiguità di progetto, preferisci istintivamente:">9. When dealing with extreme project ambiguity, you instinctively prefer to:</h3>
+            <div class="options">
+                <input type="radio" id="q9a" name="q9" value="TC"><label for="q9a" data-en="Build a mathematical model to find patterns in the chaos." data-it="Costruire un modello matematico per trovare schemi nel caos.">Build a mathematical model to find patterns in the chaos.</label>
+                <input type="radio" id="q9b" name="q9" value="BM"><label for="q9b" data-en="Pivot the strategy entirely to minimize wasted resources." data-it="Cambiare completamente strategia per ridurre al minimo lo spreco di risorse.">Pivot the strategy entirely to minimize wasted resources.</label>
+                <input type="radio" id="q9c" name="q9" value="HS"><label for="q9c" data-en="Go back to the medical literature to see what doctors actually need." data-it="Tornare alla letteratura medica per capire cosa serva realmente ai medici.">Go back to the medical literature to see what doctors actually need.</label>
+                <input type="radio" id="q9d" name="q9" value="CD"><label for="q9d" data-en="Brainstorm multiple visual concepts to find a new angle." data-it="Sviluppare molteplici concetti visivi per trovare una nuova prospettiva.">Brainstorm multiple visual concepts to find a new angle.</label>
+                <input type="radio" id="q9e" name="q9" value="ED"><label for="q9e" data-en="Build a quick-and-dirty prototype just to see what happens." data-it="Costruire un prototipo rapido e approssimativo solo per vedere cosa succede.">Build a quick-and-dirty prototype just to see what happens.</label>
+                <input type="radio" id="q9f" name="q9" value="MC"><label for="q9f" data-en="Standardize a process so the ambiguity doesn't happen again." data-it="Standardizzare un processo affinché l'ambiguità non si ripeta.">Standardize a process so the ambiguity doesn't happen again.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 10 -->
+        <div class="question-card" data-q="10">
+            <h3 data-en="10. Which software toolset do you prefer or imagine end up daily using?" data-it="10. Quale insieme di strumenti software preferisci o immagini di utilizzare quotidianamente?">10. Which software toolset do you prefer or imagine end up daily using?</h3>
+            <div class="options">
+                <input type="radio" id="q10a" name="q10" value="TC"><label for="q10a" data-en="Python / MATLAB / R." data-it="Python / MATLAB / R.">Python / MATLAB / R.</label>
+                <input type="radio" id="q10b" name="q10" value="BM"><label for="q10b" data-en="Excel / PowerPoint / Project Management tools." data-it="Excel / PowerPoint / Strumenti di gestione progetto.">Excel / PowerPoint / Project Management tools.</label>
+                <input type="radio" id="q10c" name="q10" value="HS"><label for="q10c" data-en="Electronic Health Records (EHR) / Clinical databases." data-it="Cartelle cliniche elettroniche (EHR) / Database clinici.">Electronic Health Records (EHR) / Clinical databases.</label>
+                <input type="radio" id="q10d" name="q10" value="CD"><label for="q10d" data-en="Figma / Adobe Creative Suite / Webflow." data-it="Figma / Adobe Creative Suite / Webflow.">Figma / Adobe Creative Suite / Webflow.</label>
+                <input type="radio" id="q10e" name="q10" value="ED"><label for="q10e" data-en="SolidWorks / Altium / AutoCAD." data-it="SolidWorks / Altium / AutoCAD.">SolidWorks / Altium / AutoCAD.</label>
+                <input type="radio" id="q10f" name="q10" value="MC"><label for="q10f" data-en="Quality Management Software (QMS) / ISO databases." data-it="Software di gestione della qualità (QMS) / Database ISO.">Quality Management Software (QMS) / ISO databases.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 11 -->
+        <div class="question-card" data-q="11">
+            <h3 data-en="11. Ultimately, your core motivation in Bioengineering is:" data-it="11. In ultima analisi, la tua motivazione principale in Bioingegneria è:">11. Ultimately, your core motivation in Bioengineering is:</h3>
+            <div class="options">
+                <input type="radio" id="q11a" name="q11" value="TC"><label for="q11a" data-en="Discovering new underlying principles through data." data-it="Scoprire nuovi principi fondamentali attraverso i dati.">Discovering new underlying principles through data.</label>
+                <input type="radio" id="q11b" name="q11" value="BM"><label for="q11b" data-en="Bringing an innovative device to market successfully." data-it="Portare sul mercato con successo un dispositivo innovativo.">Bringing an innovative device to market successfully.</label>
+                <input type="radio" id="q11c" name="q11" value="HS"><label for="q11c" data-en="Directly improving care delivery for patients today." data-it="Migliorare direttamente l'erogazione delle cure per i pazienti di oggi.">Directly improving care delivery for patients today.</label>
+                <input type="radio" id="q11d" name="q11" value="CD"><label for="q11d" data-en="Making healthcare technology less intimidating and intuitive." data-it="Rendere la tecnologia sanitaria meno intimidatoria e più intuitiva.">Making healthcare technology less intimidating and intuitive.</label>
+                <input type="radio" id="q11e" name="q11" value="ED"><label for="q11e" data-en="Inventing a tangible, physical solution to a hard problem." data-it="Inventare una soluzione fisica e tangibile a un problema complesso.">Inventing a tangible, physical solution to a hard problem.</label>
+                <input type="radio" id="q11f" name="q11" value="MC"><label for="q11f" data-en="Ensuring that technology is safe, reliable, and compliant." data-it="Garantire che la tecnologia sia sicura, affidabile e conforme.">Ensuring that technology is safe, reliable, and compliant.</label>
+            </div>
+        </div>
+
+        <!-- QUESTION 12 -->
+        <div class="question-card" data-q="12">
+            <h3 data-en="12. You communicate your ideas best through:" data-it="12. Comunichi le tue idee al meglio attraverso:">12. You communicate your ideas best through:</h3>
+            <div class="options">
+                <input type="radio" id="q12a" name="q12" value="TC"><label for="q12a" data-en="Graphs, charts, and mathematical proofs." data-it="Grafici, diagrammi e dimostrazioni matematiche.">Graphs, charts, and mathematical proofs.</label>
+                <input type="radio" id="q12b" name="q12" value="BM"><label for="q12b" data-en="High-level pitch slide decks and executive summaries." data-it="Slide deck di presentazione ad alto livello e sintesi esecutive.">High-level pitch slide decks and executive summaries.</label>
+                <input type="radio" id="q12c" name="q12" value="HS"><label for="q12c" data-en="Case studies and patient narratives." data-it="Casi di studio e narrazioni dei pazienti.">Case studies and patient narratives.</label>
+                <input type="radio" id="q12d" name="q12" value="CD"><label for="q12d" data-en="Wireframes, storyboards, and sketches." data-it="Wireframe, storyboard e schizzi.">Wireframes, storyboards, and sketches.</label>
+                <input type="radio" id="q12e" name="q12" value="ED"><label for="q12e" data-en="Technical schematics and blueprints." data-it="Schemi tecnici e progetti (blueprints).">Technical schematics and blueprints.</label>
+                <input type="radio" id="q12f" name="q12" value="MC"><label for="q12f" data-en="Highly structured Standard Operating Procedures (SOPs)." data-it="Procedure Operative Standard (SOP) altamente strutturate.">Highly structured Standard Operating Procedures (SOPs).</label>
+            </div>
+        </div>
+
+        <div id="error-msg" class="no-print" data-en="Please answer all 12 questions before analyzing your profile." data-it="Per favore, rispondi a tutte le 12 domande prima di analizzare il tuo profilo.">Please answer all 12 questions before analyzing your profile.</div>
+        <button type="button" class="btn-primary no-print" id="submitBtn" onclick="calculateResults()" data-en="Generate Profile" data-it="Genera Profilo">Generate Profile</button>
+
+    </form>
+
+    <div id="results-container">
+        <h2 style="color: var(--secondary); margin-top:0; font-size: 2rem;" id="resultsTitle" data-en="Profile generated" data-it="Profilo generato">Profile generated</h2>
+        <p style="color: var(--text-light); margin-bottom: 30px;" id="resultsPara" data-en="Based on your responses, here is your alignment with these 6 core bioengineering career tracks." data-it="In base alle tue risposte, ecco il tuo allineamento con i 6 percorsi di carriera fondamentali in bioingegneria.">Based on your responses, here is your alignment with these 6 core bioengineering career tracks.</p>
+        
+        <div id="bars-container"></div>
+
+        <div id="hybrid-message"></div>
+
+        <!-- Save / Download Buttons -->
+        <div class="action-buttons no-print">
+            <button class="btn-secondary" id="pdfBtn" onclick="window.print()" data-en="📄 Save Report as PDF" data-it="📄 Salva Report come PDF">
+                📄 Save Report as PDF
+            </button>
+            <button class="btn-secondary" id="txtBtn" onclick="downloadRawData()" data-en="💾 Download Raw Data (.txt)" data-it="💾 Scarica Dati Grezzi (.txt)">
+                💾 Download Raw Data (.txt)
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Set Language Memory States[cite: 2]
+        let currentLang = 'en';
+
+        const TrackLabels = {
+            en: {
+                'TC': 'Computational & Data Science',
+                'BM': 'Bio-Business & Strategy',
+                'HS': 'Clinical & Translational Bioengineering',
+                'CD': 'Medical Device Usability/Interfacing and Ergonomics',
+                'ED': 'R&D Hardware & Biomaterials',
+                'MC': 'Regulatory Affairs & Quality Systems'
+            },
+            it: {
+                'TC': 'Scienza Computazionale e dei Dati',
+                'BM': 'Bio-Business e Strategia',
+                'HS': 'Ingegneria Clinica e Traslazionale',
+                'CD': 'Usabilità/Interfacce ed Ergonomia dei Dispositivi Medici',
+                'ED': 'R&D Hardware e Biomateriali',
+                'MC': 'Affari Regolatori e Sistemi di Qualità'
+            }
+        };
+
+        const StructuralStrings = {
+            en: {
+                exportHeader: "BIOENGINEERING CAREER PROFILE\n========================================\n\n",
+                exportPercentages: "DOMAIN MATCH PERCENTAGES\n========================================\n",
+                exportAssigned: "-> [Assigned Category: ",
+                errorIncomplete: "⚠️ Please complete all questions. You have answered ",
+                hybridTitle: "💡 Hybrid Profile Detected:",
+                hybridContent: "Your top traits are closely matched."
+            },
+            it: {
+                exportHeader: "PROFILO DI BIOINGEGNERE\n========================================\n\n",
+                exportPercentages: "PERCENTUALI DI AFFINITÀ DEI DOMINI\n========================================\n",
+                exportAssigned: "-> [Categoria Assegnata: ",
+                errorIncomplete: "⚠️ Per favore completa tutte le domande. Hai risposto a ",
+                hybridTitle: "💡 Rilevato Profilo Ibrido:",
+                hybridContent: "I tuoi tratti principali sono strettamente allineati."
+            }
+        };
+
+        // --- DYNAMIC SELECTION SHUFFLE ENGINE ---[cite: 2]
+        function scrambleOptions() {
+            document.querySelectorAll('.options').forEach(optionsContainer => {
+                let elements = [];
+                let inputs = optionsContainer.querySelectorAll('input[type="radio"]');
+                inputs.forEach(input => {
+                    let label = optionsContainer.querySelector(`label[for="${input.id}"]`);
+                    elements.push({ input, label });
+                });
+                
+                for (let i = elements.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [elements[i], elements[j]] = [elements[j], elements[i]];
+                }
+                
+                elements.forEach(el => {
+                    optionsContainer.appendChild(el.input);
+                    optionsContainer.appendChild(el.label);
+                });
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            scrambleOptions();
+        });
+
+        // --- TOGGLE INTERFACE ENGINES ---
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark-theme');
+            const isDark = body.classList.contains('dark-theme');
+            document.getElementById('themeBtn').innerText = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'it' : 'en';
+            document.getElementById('langBtn').innerText = currentLang === 'en' ? '🇮🇹 Italiano' : '🇬🇧 English';
+            document.documentElement.lang = currentLang;
+
+            // Loop and translate text nodes cleanly using dataset attributes
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.innerText = el.getAttribute(`data-${currentLang}`);
+            });
+
+            // Dynamic algorithmic refresh if metrics are already calculated[cite: 2]
+            if (document.getElementById('results-container').style.display === 'block') {
+                calculateResults(true); // Silent update parameters
+            }
+        }
+
+        let studentDataExport = "";
+
+        function calculateResults(silentRefresh = false) {
+            document.getElementById('error-msg').style.display = 'none';
+
+            const totalQuestions = document.querySelectorAll('.question-card').length;
+            let scores = { 'TC': 0, 'BM': 0, 'HS': 0, 'CD': 0, 'ED': 0, 'MC': 0 };
+            let answeredCount = 0;
+            
+            let exportLog = StructuralStrings[currentLang].exportHeader;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected) {
+                    scores[selected.value] += 1;
+                    answeredCount++;
+                    const answerText = selected.nextElementSibling.innerText;
+                    
+                    // Correcting raw category mapping logic inside structural exports[cite: 2]
+                    const mappedLabel = TrackLabels[currentLang][selected.value];
+                    exportLog += `Q${i}: ${answerText}\n${StructuralStrings[currentLang].exportAssigned}${mappedLabel}]\n\n`;
+                }
+            }
+
+            if (answeredCount < totalQuestions) {
+                const errorStr = `${StructuralStrings[currentLang].errorIncomplete}${answeredCount} / ${totalQuestions}.`;
+                document.getElementById('error-msg').innerText = errorStr;
+                document.getElementById('error-msg').style.display = 'block';
+                return; 
+            }
+
+            const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+            const barsContainer = document.getElementById('bars-container');
+            barsContainer.innerHTML = ''; 
+            
+            exportLog += StructuralStrings[currentLang].exportPercentages;
+
+            sortedScores.forEach(([trackKey, score]) => {
+                const percentage = Math.round((score / totalQuestions) * 100);
+                exportLog += `${TrackLabels[currentLang][trackKey]}: ${percentage}%\n`;
+                
+                const html = `
+                    <div class="track-result">
+                        <div class="track-header">
+                            <span>${TrackLabels[currentLang][trackKey]}</span>
+                            <span>${percentage}%</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 0%" data-target="${percentage}%"></div>
+                        </div>
+                    </div>
+                `;
+                barsContainer.insertAdjacentHTML('beforeend', html);
+            });
+
+            const topScore = sortedScores[0][1];
+            const secondScore = sortedScores[1][1];
+            const hybridDiv = document.getElementById('hybrid-message');
+            
+            if ((topScore - secondScore) <= 1) {
+                const hybridMsg = `${TrackLabels[currentLang][sortedScores[0][0]]} & ${TrackLabels[currentLang][sortedScores[1][0]]}. ${StructuralStrings[currentLang].hybridContent}`;
+                hybridDiv.innerHTML = `
+                    <div class="hybrid-alert">
+                        <strong>${StructuralStrings[currentLang].hybridTitle}</strong> ${hybridMsg}
+                    </div>`;
+                exportLog += `\nNOTE: ${StructuralStrings[currentLang].hybridTitle} ${hybridMsg}\n`;
+            } else {
+                hybridDiv.innerHTML = '';
+            }
+
+            studentDataExport = exportLog;
+            const resultsDiv = document.getElementById('results-container');
+            resultsDiv.style.display = 'block';
+            
+            // Execute automated UI width animations fluidly
+            setTimeout(() => {
+                document.querySelectorAll('.progress-bar-fill').forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-target');
+                });
+                if (!silentRefresh) {
+                    resultsDiv.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 50);
+        }
+
+        function downloadRawData() {
+            if(!studentDataExport) return;
+            const blob = new Blob([studentDataExport], { type: 'text/plain;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Bioengineering_Profile_${currentLang}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

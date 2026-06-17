@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Reimbursement Guidelines - Unimore</title>
+    <style>
+        /* CSS Variables for Light/Dark Mode */
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #333333;
+            --header-bg: #ffffff;
+            --box-bg: #f4f8fb;
+            --border-color: #004080;
+            --link-color: #0056b3;
+            --btn-bg: #004080;
+            --btn-text: #ffffff;
+            --accent-color: #a30000;
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --header-bg: #1e1e1e;
+            --box-bg: #2a2a2a;
+            --border-color: #4a90e2;
+            --link-color: #66b2ff;
+            --btn-bg: #4a90e2;
+            --btn-text: #121212;
+            --accent-color: #ff6666;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        /* Header & Controls */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .controls button {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            padding: 10px 15px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: opacity 0.2s;
+        }
+
+        .controls button:hover {
+            opacity: 0.8;
+        }
+
+        /* Typography */
+        h1 {
+            color: var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background-color: var(--box-bg);
+            border-left: 5px solid var(--border-color);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 5px 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        .file-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background-color: var(--border-color);
+            color: var(--bg-color) !important;
+            border-radius: 4px;
+            text-decoration: none !important;
+        }
+        
+        .file-link:hover {
+            opacity: 0.8;
+        }
+
+        ul { margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        /* Language Toggle Logic */
+        .lang-it { display: none; }
+        body.show-it .lang-en { display: none; }
+        body.show-it .lang-it { display: block; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <!-- University Logo loaded from the private_car folder -->
+            <img src="./private_car/Logo_A_Positivo_Colore.jpg" alt="Unimore Logo" class="logo">
+            <div class="controls">
+                <button onclick="toggleTheme()">🌓 Dark/Light</button>
+                <button onclick="toggleLang()">🌐 EN / IT</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- ================= ENGLISH VERSION ================= -->
+            <div class="lang-en">
+                <h1>Guidelines for Private Vehicle Usage & Reimbursement</h1>
+                <p>Welcome to the Department of Biomedical, Metabolic and Neural Sciences in Modena. Speakers opting to travel to the university using a personal vehicle must strictly adhere to the following administrative procedures to ensure travel authorization and subsequent expense reimbursement[cite: 6].</p>
+                <p>Please download, fill out, and return the three documents linked below alongside your original receipts.</p>
+
+                <div class="info-box">
+                    <h2>1. Authorization Form for Extraordinary Transport</h2>
+                    <p>This form must be submitted to request the formal use of an extraordinary means of transport (your personal car)[cite: 7]. The form requires the approval and signature of the Department Director[cite: 7].</p>
+                    <p><strong>How to fill it out:</strong> Provide your personal details, the destination, and the dates of the seminar[cite: 7]. You must select at least one valid condition justifying the use of a private vehicle, such as economic convenience, incompatibility of public transport schedules, or the need to transport delicate/bulky materials[cite: 7].</p>
+                    <a href="./private_car/modulo_autorizzazione_mezzo.docx" class="file-link" download>⬇ Download Authorization Form</a>
+                </div>
+
+                <div class="info-box">
+                    <h2>2. Expense Reimbursement Request Form</h2>
+                    <p>This is the standard summary document used to officially claim your travel expenses, including fuel and tolls[cite: 8]. Fuel reimbursement is calculated as one-fifth of the national cost of a liter of unleaded petrol, based on the Ministry of Economic Development's official weekly average[cite: 6].</p>
+                    <p><strong>How to fill it out:</strong> Detail your exact itinerary, including departure/arrival times and locations[cite: 8]. You must formally declare the total number of kilometers driven under your own legal responsibility[cite: 6, 8]. The administrative office will verify the route using official routing systems like ACI tables or Via Michelin[cite: 6]. Remember to attach all original paper receipts and transit tickets[cite: 6, 8].</p>
+                    <a href="./private_car/modulo_rimborso_spese.docx" class="file-link" download>⬇ Download Reimbursement Form</a>
+                </div>
+
+                <div class="info-box">
+                    <h2>3. Self-Certification Form (Telepass Tolls)</h2>
+                    <p>Drafted under Article 47 of D.P.R. 28.12.2000, n. 445, this document allows citizens to legally self-certify facts and personal qualities to the Public Administration[cite: 9].</p>
+                    <p><strong>How to fill it out:</strong> This document is required <em>only</em> if you are claiming highway tolls paid via an electronic toll collection system (e.g., Telepass). You must fill in your personal data and explicitly declare the academic purpose of the trip (e.g., "On [Date], I held a seminar for [Department] at [Location]")[cite: 9]. You must also identify the registered holder of the electronic toll device[cite: 9].</p>
+                    <a href="./private_car/dichiarazione_sostitutiva_telepass.docx" class="file-link" download>⬇ Download Self-Certification Form</a>
+                </div>
+
+                <div class="info-box" style="background-color: transparent; border-left: none; border-top: 2px solid var(--border-color); border-radius: 0; padding-left: 0;">
+                    <h2>Mandatory Kasko Insurance Activation</h2>
+                    <p>It is an institutional requirement to activate a dedicated Kasko insurance policy covering your vehicle for the duration of the travel. To ensure the policy is active before your journey, promptly email the departmental travel office at <a href="mailto:missioni.bmn@unimore.it">missioni.bmn@unimore.it</a> with the following details:</p>
+                    <ul>
+                        <li>Current Professional Role</li>
+                        <li>Primary Employer / Affiliated Institution</li>
+                        <li>Car Model & Vehicle License Plate Number</li>
+                        <li>Days of Travel (Seminar dates) & City of Departure</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ================= ITALIAN VERSION ================= -->
+            <div class="lang-it">
+                <h1>Linee Guida per l'Utilizzo del Mezzo Proprio e Rimborsi</h1>
+                <p>Benvenuti al Dipartimento di Scienze Biomediche, Metaboliche e Neuroscienze di Modena. I relatori che scelgono di viaggiare verso l'università utilizzando un veicolo personale devono attenersi rigorosamente alle seguenti procedure amministrative per garantire l'autorizzazione al viaggio e il successivo rimborso delle spese[cite: 6].</p>
+                <p>Si prega di scaricare, compilare e restituire i tre documenti linkati di seguito unitamente alle ricevute in originale.</p>
+
+                <div class="info-box">
+                    <h2>1. Modulo di Autorizzazione Mezzo Straordinario</h2>
+                    <p>Questo modulo deve essere presentato per richiedere l'uso formale di un mezzo di trasporto straordinario (la propria auto)[cite: 7]. Il modulo richiede l'approvazione e la firma del Direttore di Dipartimento[cite: 7].</p>
+                    <p><strong>Come compilarlo:</strong> Inserire i propri dati personali, la destinazione e le date del seminario[cite: 7]. È necessario selezionare almeno una condizione valida che giustifichi l'uso del veicolo privato, come la convenienza economica, l'incompatibilità degli orari dei mezzi pubblici o la necessità di trasportare materiali delicati/ingombranti[cite: 7].</p>
+                    <a href="./private_car/modulo_autorizzazione_mezzo.docx" class="file-link" download>⬇ Scarica Modulo Autorizzazione</a>
+                </div>
+
+                <div class="info-box">
+                    <h2>2. Richiesta di Rimborso Spese</h2>
+                    <p>Questo è il documento riepilogativo standard utilizzato per richiedere ufficialmente le spese di viaggio, inclusi carburante e pedaggi[cite: 8]. Il rimborso del carburante è calcolato come un quinto del costo nazionale di un litro di benzina verde, in base alla media settimanale ufficiale del Ministero dello Sviluppo Economico[cite: 6].</p>
+                    <p><strong>Come compilarlo:</strong> Dettagliare l'itinerario esatto, inclusi orari e luoghi di partenza/arrivo[cite: 8]. È necessario dichiarare formalmente il numero totale di chilometri percorsi sotto la propria responsabilità legale[cite: 6, 8]. L'ufficio amministrativo verificherà il percorso utilizzando sistemi ufficiali come le tabelle ACI o Via Michelin[cite: 6]. Ricordarsi di allegare tutte le ricevute cartacee originali e i biglietti di transito[cite: 6, 8].</p>
+                    <a href="./private_car/modulo_rimborso_spese.docx" class="file-link" download>⬇ Scarica Modulo Rimborso</a>
+                </div>
+
+                <div class="info-box">
+                    <h2>3. Dichiarazione Sostitutiva (Pedaggi Telepass)</h2>
+                    <p>Redatto ai sensi dell'Articolo 47 del D.P.R. 28.12.2000, n. 445, questo documento consente ai cittadini di autocertificare legalmente fatti e qualità personali alla Pubblica Amministrazione[cite: 9].</p>
+                    <p><strong>Come compilarlo:</strong> Questo documento è richiesto <em>esclusivamente</em> se si richiedono pedaggi autostradali pagati tramite un sistema di telepedaggio (es. Telepass). È necessario compilare i propri dati personali e dichiarare esplicitamente lo scopo accademico del viaggio (es. "In data [Data], ho tenuto un seminario per [Dipartimento] presso [Luogo]")[cite: 9]. È inoltre necessario identificare l'intestatario del dispositivo di pedaggio[cite: 9].</p>
+                    <a href="./private_car/dichiarazione_sostitutiva_telepass.docx" class="file-link" download>⬇ Scarica Autocertificazione</a>
+                </div>
+
+                <div class="info-box" style="background-color: transparent; border-left: none; border-top: 2px solid var(--border-color); border-radius: 0; padding-left: 0;">
+                    <h2>Attivazione Obbligatoria Polizza Kasko</h2>
+                    <p>È un requisito istituzionale attivare una polizza assicurativa Kasko dedicata a copertura del veicolo per la durata del viaggio. Per garantire che la polizza sia attiva prima della partenza, inviare tempestivamente un'e-mail all'ufficio missioni dipartimentale all'indirizzo <a href="mailto:missioni.bmn@unimore.it">missioni.bmn@unimore.it</a> con i seguenti dettagli:</p>
+                    <ul>
+                        <li>Ruolo Professionale Attuale</li>
+                        <li>Datore di Lavoro Principale / Ente di Appartenenza</li>
+                        <li>Modello Auto & Targa del Veicolo</li>
+                        <li>Giorni di Viaggio (Date del seminario) & Città di Partenza</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        function toggleLang() {
+            document.body.classList.toggle('show-it');
+        }
+    </script>
+</body>
+</html>
+
+
+
+
